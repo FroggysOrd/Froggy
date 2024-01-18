@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: black;
+            color: white;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr); /* 5 columns */
+            grid-template-rows: repeat(4, 1fr); /* 4 rows */
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .gallery-item {
+            text-align: center;
+            padding: 10px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            image-rendering: pixelated;
+        }
+
+        .filename {
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery" id="gallery"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const gallery = document.getElementById('gallery');
+            const imageNames = [
+                '2020.png', '5570.png', '9319.png', '9798.png', 
+                '2870.png', '5194.png', '2758.png', '1544.png', 
+                '317.png', '3875.png', '9382.png', '9743.png', 
+                '7005.png', '8793.png', '1644.png', '7793.png', 
+                '8033.png', '962.png', '5637.png', '8953.png'
+            ];
+
+            imageNames.forEach(imageName => {
+                const imagePath = `20/${imageName}`;
+                const imageNumber = imageName.split('.')[0]; // Remove .png extension
+                
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'gallery-item';
+                galleryItem.innerHTML = `
+                    <img src="${imagePath}" alt="${imageName}">
+                    <div class="filename">${imageNumber}</div>
+                `;
+                gallery.appendChild(galleryItem);
+            });
+        });
+    </script>
+</body>
+</html>
