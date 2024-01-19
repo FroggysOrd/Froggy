@@ -40,30 +40,38 @@
 </head>
 <body>
     <div class="gallery" id="gallery"></div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const gallery = document.getElementById('gallery');
-            const imageNames = [
-                '2020.png', '5570.png', '9319.png', '9798.png', 
-                '2870.png', '5194.png', '2758.png', '1544.png', 
-                '317.png', '3875.png', '9382.png', '9743.png', 
-                '7005.png', '8793.png', '1644.png', '7793.png', 
-                '8033.png', '962.png', '5637.png', '8953.png'
-            ];
+   <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const gallery = document.getElementById('gallery');
+        const imageNames = [
+            '2020.png', '5570.png', '9319.png', '9798.png',
+            '2870.png', '5194.png', '2758.png', '1544.png',
+            '317.png', '3875.png', '9382.png', '9743.png',
+            '7005.png', '8793.png', '1644.png', '7793.png',
+            '8033.png', '962.png', '5637.png', '8953.png',
+            '1.png', '1771.png', '1128.png', '6811.png',
+            '8048.png', '6870.png', '6500.png', '4792.png',
+            '2957.png', '957.png', '9755.png', '7172.png',
+            '4244.png', '7205.png', '2102.png', '9002.png',
+            '7937.png', '7034.png', '6120.png', '5967.png',
+            '4675.png', '6096.png', '7520.png', '5375.png',
+            '8372.png', '9911.png', '6754.png', '3722.png',
+            '2465.png', '4467.png', '9090.png', '7648.png'
+        ];
 
-            imageNames.forEach(imageName => {
-                const imagePath = `20/${imageName}`;
-                const imageNumber = imageName.split('.')[0]; // Remove .png extension
-                
-                const galleryItem = document.createElement('div');
-                galleryItem.className = 'gallery-item';
-                galleryItem.innerHTML = `
-                    <img src="${imagePath}" alt="${imageName}">
-                    <div class="filename">${imageNumber}</div>
-                `;
-                gallery.appendChild(galleryItem);
-            });
+        imageNames.forEach(imageName => {
+            const imagePath = `20/${imageName}`;
+            const imageNumber = imageName.split('.')[0]; // Extracts the number part
+            
+            const galleryItem = document.createElement('div');
+            galleryItem.className = 'gallery-item';
+            galleryItem.innerHTML = `
+                <img src="${imagePath}" alt="Froggy ${imageNumber}">
+                <div class="filename">${imageNumber}</div>
+            `;
+            gallery.appendChild(galleryItem);
         });
-    </script>
+    });
+</script>
 </body>
 </html>
