@@ -62,18 +62,21 @@
             '2465.png', '4467.png', '9090.png', '7648.png'
         ];
 
-        imageNames.forEach(imageName => {
+ imageNames.forEach(imageName => {
             const collectionID = imageName.split('.')[0];
             const inscriptionID = collectionInscriptionMapping[collectionID] || 'Unknown';
+            const inscriptionURL = `https://sordinals.com/inscription/${inscriptionID}`;
             
             const galleryItem = document.createElement('div');
             galleryItem.className = 'gallery-item';
             galleryItem.innerHTML = `
-                <img src="20/${imageName}" alt="Froggy ${collectionID}">
+                <img src="Frogs/${imageName}" alt="Froggy ${collectionID}">
                 <div class="filename">Collection ID: ${collectionID}</div>
-                <div class="inscription-id">Inscription ID: ${inscriptionID}</div>
+                ${inscriptionID !== 'Unknown' ? `<div class="inscription-id"><a href="${inscriptionURL}" target="_blank">Inscription ID: ${inscriptionID}</a></div>` : '<div class="inscription-id">Inscription ID: Unknown</div>'}
             `;
             gallery.appendChild(galleryItem);
+
+        
         });
     });
 </script>
