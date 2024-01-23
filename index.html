@@ -4,37 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery</title>
-    <style>
+  <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Helvetica Neue', sans-serif;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            background-color: gray;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+        }
+
+        #social-media {
+            margin-bottom: 20px;
+        }
+
+        #social-media a {
+            margin: 0 15px;
             color: white;
+            text-decoration: none;
+            font-size: 24px;
+            transition: color 0.3s ease;
+        }
+
+        #social-media a:hover {
+            color: #1DA1F2; /* Twitter blue for hover */
         }
 
         .gallery {
             display: grid;
-            grid-template-columns: repeat(5, 1fr); /* 5 columns for the 5x4 grid */
-            gap: 10px;
-            padding: 10px;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .gallery-item {
-            text-align: center;
-            padding: 10px;
+            background-color: #222;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #444;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px rgba(0,0,0,0.5);
         }
 
         .gallery-item img {
-            width: 100%; /* Adjust width to fit the grid */
-            height: auto; /* Maintain aspect ratio */
+            width: 100%;
+            height: auto;
             image-rendering: pixelated;
         }
 
-        .filename {
-            margin-top: 5px;
+        .filename, .inscription-id {
+            margin-top: 8px;
+            font-size: 14px;
         }
+
+        /* Add FontAwesome library for icons */
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     </style>
 </head>
 <body>
