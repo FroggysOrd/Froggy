@@ -6,6 +6,33 @@
     <title>Froggys Gallery</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
+
+        .top-menu {
+    background-color: #333; /* Dark background for contrast */
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between menu items */
+}
+
+.top-menu a {
+    color: #fff; /* White text for contrast */
+    text-decoration: none;
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.top-menu a:hover {
+    background-color: #444; /* Darker on hover for feedback */
+}
+
+/* FontAwesome icons adjustment */
+.top-menu .fab {
+    margin-right: 5px;
+}
+
         body {
             font-family: 'Helvetica Neue', sans-serif;
             margin: 0;
@@ -111,6 +138,14 @@
     </style>
 </head>
 <body>
+
+<div class="top-menu">
+    <a href="https://twitter.com/FroggysOrd" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
+    <a href="https://discord.gg/uj6XxBXykx" target="_blank"><i class="fab fa-discord"></i> Discord</a>
+    <a href="https://froggy-auctions.xyz/" target="_blank">HOP</a>
+ </div>    
+
+    
     <div class="announcement">
         <h1>Froggys mint april 2024</h1>
         <p>First 300 discord members get WL</p>
